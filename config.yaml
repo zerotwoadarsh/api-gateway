@@ -1,0 +1,12 @@
+# Gateway routing configuration.
+# Add a new backend service by adding an entry here — no gateway code changes needed.
+#
+# `protected` controls whether requests need a valid JWT (see /auth/token
+# for a dev-only way to mint one locally). Defaults to true if omitted.
+routes:
+  - path: /users
+    target: http://localhost:4001
+    protected: false
+  - path: /orders
+    target: http://localhost:4002
+    protected: true
